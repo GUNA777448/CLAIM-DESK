@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>College Lost &amp; Found</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="page">
+            <header class="topbar">
+                <div class="brand">
+                    <span class="brand-mark">CLAIM DESK</span>
+                    <span class="brand-sub">College Lost &amp; Found</span>
+                </div>
+                <div class="status-pill" aria-live="polite">
+                    Secure campus reclaim flow
+                </div>
+            </header>
+
+            <!-- Welcome -->
+            <section id="welcome" class="panel hero">
+                <div class="hero-copy">
+                    <h1>Find what matters, fast.</h1>
+                    <p>
+                        Report missing items, track updates, and claim what is yours with a
+                        clean, student-first experience.
+                    </p>
+                    <button id="get-started" class="btn btn-primary">Get Started</button>
+                </div>
+                <div class="hero-card">
+                    <h2>Today on campus</h2>
+                    <ul class="hero-list">
+                        <li>Lab coat left near Block C</li>
+                        <li>Calculator found in Library West</li>
+                        <li>Water bottle in Auditorium row 4</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Login -->
+            <section id="login-page" class="panel login is-hidden">
+                <h1>Login</h1>
+                <p class="subtle">Use your college email to continue.</p>
+                <div class="field">
+                    <label for="login-email">College Email</label>
+                    <input type="email" id="login-email" placeholder="you@college.edu" />
+                </div>
+                <div class="field">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" />
+                </div>
+                <button id="login-btn" class="btn btn-primary">Login</button>
+            </section>
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="panel dashboard is-hidden">
+                <div class="dashboard-header">
+                    <div>
+                        <h1>Lost &amp; Found Dashboard</h1>
+                        <p class="subtle">Create a report or claim a posted item.</p>
+                    </div>
+                    <button id="create-item-btn" class="btn btn-accent">
+                        + Create Lost Item
+                    </button>
+                </div>
+
+                <!-- Add Section -->
+                <section id="add-section" class="card is-hidden">
+                    <h2>Add Lost Item</h2>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="item-name">Item Name</label>
+                            <input type="text" id="item-name" placeholder="Silver wristwatch" />
+                        </div>
+                        <div class="field">
+                            <label for="item-desc">Description</label>
+                            <input type="text" id="item-desc" placeholder="Black strap, minor scratches" />
+                        </div>
+                        <div class="field">
+                            <label for="item-location">Location Found</label>
+                            <input type="text" id="item-location" placeholder="Science block, room 214" />
+                        </div>
+                        <div class="field">
+                            <label for="item-contact">Your Contact</label>
+                            <input
+                                type="text"
+                                id="item-contact"
+                                placeholder="Phone or email"
+                            />
+                        </div>
+                    </div>
+                    <button id="submit-item-btn" class="btn btn-primary">Submit</button>
+                </section>
+
+                <!-- Board -->
+                <section id="items-section" class="card">
+                    <div class="section-title">
+                        <h2>Lost Items Board</h2>
+                        <span id="items-count" class="count">0 items</span>
+                    </div>
+                    <div id="items-empty" class="empty-state is-hidden">
+                        No items available. Add a new listing to begin.
+                    </div>
+                    <ul id="items-list" class="items-list"></ul>
+                </section>
+
+                <button id="logout-btn" class="btn btn-ghost">Logout</button>
+            </section>
+        </div>
+
+        <!-- Claim Modal -->
+        <div id="claim-modal" class="modal is-hidden" role="dialog" aria-modal="true">
+            <div class="modal-content">
+                <h3>Claim Item</h3>
+                <p class="subtle">We will notify the listed contact to verify ownership.</p>
+                <div class="field">
+                    <label for="claimer-name">Your Name</label>
+                    <input type="text" id="claimer-name" placeholder="Full name" />
+                </div>
+                <div class="field">
+                    <label for="claimer-contact">Your Contact</label>
+                    <input type="text" id="claimer-contact" placeholder="Phone or email" />
+                </div>
+                <div class="modal-actions">
+                    <button id="claim-confirm-btn" class="btn btn-primary">Claim</button>
+                    <button id="claim-cancel-btn" class="btn btn-ghost">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
